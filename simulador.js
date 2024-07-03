@@ -1,3 +1,37 @@
+function heart_sweet() {
+    let nombre = "heart sweet";
+    let tipo = "collar";
+    let precio = 6500;
+    return precio
+}
+
+function pinky_bonbon() {
+    let nombre = "pinky bonbon";
+    let tipo = "collar";
+    let precio = 6000;
+    return precio
+}
+
+function girlmore() {
+    let nombre = "girlmore";
+    let tipo = "collar";
+    let precio = 5000;
+    return precio
+}
+
+function choker_spider() {
+    let nombre = "choker spider";
+    let tipo = "collar";
+    let precio = 4500;
+    return precio
+}
+
+function suma(){
+    let a = n1 
+    let b = n2
+    let c = n3
+    return a+b+c
+}
 
 
 //! simulador interactivo E-commerce - algoritmo con condicional
@@ -8,39 +42,39 @@ let n3 = prompt("Por favor ingresa el nombre del siguiente productos que desee a
 
 
 if (n1 == "heart_sweet") {
-    n1 = 6500
+    n1 = heart_sweet();
 }else if (n1 == "pinky_bonbon") {
-    n1 = 6000
+    n1 = pinky_bonbon()
 }else if (n1 == "girlmore") {
-    n1 = 5000
+    n1 = girlmore()
 }else if (n1 == "choker_spider") {
-    n1 = 4500
+    n1 = choker_spider()
 } else {
     alert ("el producto " + n1 + " no existe")
 }
 
 
 if (n2 == "heart_sweet") {
-    n2 = 6500
+    n2 = heart_sweet()
 }else if (n2 == "pinky_bonbon") {
-    n2 = 6000
+    n2 = pinky_bonbon()
 }else if (n2 == "girlmore") {
-    n2 = 5000
+    n2 = girlmore()
 }else if (n2 == "choker_spider") {
-    n2 = 4500
+    n2 = choker_spider()
 } else {
     alert ("el producto " + n2 + " no existe")
 }
 
 
 if (n3 == "heart_sweet") {
-    n3 = 6500
+    n3 = heart_sweet()
 }else if (n3 == "pinky_bonbon") {
-    n3 = 6000
+    n3 = pinky_bonbon()
 }else if (n3 == "girlmore") {
-    n3 = 5000
+    n3 = girlmore()
 }else if (n3 == "choker_spider") {
-    n3 = 4500
+    n3 = choker_spider()
 } else {
     alert ("el producto " + n3 + " no existe")
 }
@@ -51,10 +85,9 @@ console.log (n2)
 
 console.log (n3)
 
-let total = n1+n2+n3
 
-console.log(total)
-
+let total = suma()
+console.log (total)
 
 
 
@@ -62,5 +95,5 @@ console.log(total)
 
 for ( let i = total ; i <= 30000 ; i += 6500 ) {
     console.log (i)
-    
+
 }
