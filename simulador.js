@@ -1,30 +1,27 @@
-function heart_sweet() {
-    let nombre = "heart sweet";
-    let tipo = "collar";
-    let precio = 6500;
-    return precio
-}
+let productos = [
+    {
+        nombre: "heart sweet",
+        tipo: "collar",
+        precio: 6500
 
-function pinky_bonbon() {
-    let nombre = "pinky bonbon";
-    let tipo = "collar";
-    let precio = 6000;
-    return precio
-}
+    },
+    {
+        nombre: "pinky bonbon",
+        tipo: "collar",
+        precio: 6000
+    },
+    {
+        nombre: "girlmore",
+        tipo: "collar",
+        precio: 5000
+    },
+    {
+        nombre: "choker spider",
+        tipo: "aritos",
+        precio: 4500
+    },
+];
 
-function girlmore() {
-    let nombre = "girlmore";
-    let tipo = "collar";
-    let precio = 5000;
-    return precio
-}
-
-function choker_spider() {
-    let nombre = "choker spider";
-    let tipo = "collar";
-    let precio = 4500;
-    return precio
-}
 
 function suma(){
     let a = n1 
@@ -33,6 +30,22 @@ function suma(){
     return a+b+c
 }
 
+const ofertas = productos.filter (function (elemento) {
+    if (elemento.tipo === "aritos") {
+
+        elemento.precio = elemento.precio - elemento.precio * 0.20
+
+        return true
+    }
+})
+
+
+console.log(ofertas)
+
+for (let i = 0; i < ofertas.length; i++) {
+    let productos_en_oferta = "cantidad de productos en oferta = " + (i+1)
+    console.log(productos_en_oferta)
+}
 
 //! simulador interactivo E-commerce - algoritmo con condicional
 
@@ -41,40 +54,55 @@ let n2 = prompt("Por favor ingresa el nombre del siguiente productos que desee a
 let n3 = prompt("Por favor ingresa el nombre del siguiente productos que desee añadir al carrito (en caso de no desear otro producto haga click en el boton de cerrar)")
 
 
-if (n1 == "heart_sweet") {
-    n1 = heart_sweet();
-}else if (n1 == "pinky_bonbon") {
-    n1 = pinky_bonbon()
+if (n1 == "heart sweet") {
+    let heart_sweet = productos.find( (elemento) => {return elemento.nombre === n1})
+    n1 = heart_sweet.precio
+}else if (n1 == "pinky bonbon") {
+    let pinky_bonbon = productos.find( (elemento) => {return elemento.nombre === n1})
+    n1 = pinky_bonbon.precio
 }else if (n1 == "girlmore") {
-    n1 = girlmore()
-}else if (n1 == "choker_spider") {
-    n1 = choker_spider()
+    let girlmore = productos.find( (elemento) => {return elemento.nombre === n1})
+    n1 = girlmore.precio
+}else if (n1 == "choker spider") {
+    let choker_spider = ofertas.find( (elemento) => {return elemento.nombre === n1})
+    n1 = choker_spider.precio
+    alert ("descuento del 20% por compra de aritos aplicado correctamente")
 } else {
     alert ("el producto " + n1 + " no existe")
 }
 
 
-if (n2 == "heart_sweet") {
-    n2 = heart_sweet()
-}else if (n2 == "pinky_bonbon") {
-    n2 = pinky_bonbon()
+if (n2 == "heart sweet") {
+    let heart_sweet = productos.find( (elemento) => {return elemento.nombre === n2})
+    n2 = heart_sweet.precio
+}else if (n2 == "pinky bonbon") {
+    let pinky_bonbon = productos.find( (elemento) => {return elemento.nombre === n2})
+    n2 = pinky_bonbon.precio
 }else if (n2 == "girlmore") {
-    n2 = girlmore()
-}else if (n2 == "choker_spider") {
-    n2 = choker_spider()
+    let girlmore = productos.find( (elemento) => {return elemento.nombre === n2})
+    n2 = girlmore.precio
+}else if (n2 == "choker spider") {
+    let choker_spider = ofertas.find( (elemento) => {return elemento.nombre === n2})
+    n2 = choker_spider.precio
+    alert ("descuento del 20% por compra de aritos aplicado correctamente")
 } else {
     alert ("el producto " + n2 + " no existe")
 }
 
 
-if (n3 == "heart_sweet") {
-    n3 = heart_sweet()
-}else if (n3 == "pinky_bonbon") {
-    n3 = pinky_bonbon()
+if (n3 == "heart sweet") {
+    let heart_sweet = productos.find( (elemento) => {return elemento.nombre === n3})
+    n3 = heart_sweet.precio
+}else if (n3 == "pinky bonbon") {
+    let pinky_bonbon = productos.find( (elemento) => {return elemento.nombre === n3})
+    n3 = pinky_bonbon.precio
 }else if (n3 == "girlmore") {
-    n3 = girlmore()
-}else if (n3 == "choker_spider") {
-    n3 = choker_spider()
+    let girlmore = productos.find( (elemento) => {return elemento.nombre === n3})
+    n3 = girlmore.precio
+}else if (n3 == "choker spider") {
+    let choker_spider = ofertas.find( (elemento) => {return elemento.nombre === n3})
+    n3 = choker_spider.precio
+    alert ("descuento del 20% por compra de aritos aplicado correctamente")
 } else {
     alert ("el producto " + n3 + " no existe")
 }
@@ -89,11 +117,4 @@ console.log (n3)
 let total = suma()
 console.log (total)
 
-
-
-//! Algoritmo utilizando un ciclo
-
-for ( let i = total ; i <= 30000 ; i += 6500 ) {
-    console.log (i)
-
-}
+alert ( "el total de la compra es de " + "$" + total )
