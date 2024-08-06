@@ -93,12 +93,6 @@ const agregar_al_carrito = ( id ) => {
 
 };
 
-function suma(...varios){
-    let total = varios.reduce( (acc, elemento)=>{ return acc + elemento}, 0 );
-    
-    console.log(total)
-    alert ( "el total de la compra es de " + "$" + total )
-}
 
 
 

@@ -4,7 +4,7 @@ let carrito = JSON.parse(localStorage.getItem( "carrito" )) || [];
 
 let contenedor_carrito = document.getElementById("contenedor-carrito");
 
-
+console.log (carrito)
 
 const render_productos = (arrayproductos) => {
     let contenedor_carrito = document.getElementById("contenedor-carrito")
@@ -40,10 +40,11 @@ const eliminar_del_carrito = (id) => {
     render_precio_final (carrito) ;
 }
 
-
+//! no se si escribi mal la funcion o si no la estoy usando bien pero no puedo conseguir que me de un solo un resultado, cuando lo intento me salta un valor NaN
+//! solo me da un numero cuando lo uso en un ciclo foreach o un map y hace las cuentas individuales bien pero no puedo hacerlo en una sola operacion
 function suma(...varios){
 
-    let total = varios.reduce( (acc, elemento)=>{ return acc + (elemento.precio * elemento.cantidad) }, 0, );
+    let total = parseInt ( varios.reduce( (acc, elemento)=>{ return acc + (elemento.precio * elemento.cantidad) }, 0) );
 
     
     console.log (total)
@@ -60,23 +61,26 @@ const render_precio_final = (arrayprecio) => {
 
     precio.innerHTML = "";
 
-    arrayprecio.forEach( (final)=>{
+    arrayprecio.map( (elemento)=>{
         let resultado = document.createElement("div");
         resultado.classname = "resultado";
         resultado.innerHTML =
         ` <h2> precio final </h2>
-        <h3>${suma(final)}</h3>`
+        <h3>${suma(elemento)}</h3>`
 
         precio.appendChild(resultado);
+        
+        console.log (elemento.precio);
 
-        let xd = suma (final)
 
-console.log(xd)
     });
-
 
 };
 
 
 
 render_precio_final (carrito) ;
+
+
+
+
