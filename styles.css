@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    background-color: black;
+    width: 100%;
+    height: 1902px;
+}
+
+header {
+    background-color: cadetblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header h1 {
+    color: white;
+    font-size: 50px;
+    border: 4px solid white;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    
+}
+
+header a {
+    color: white;
+    font-size: 25px;
+    border: 4px solid white;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+
+#contenedor-productos{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#contenedor-productos div {
+    border: 4px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.44);
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.44);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.44);
+}
+
+#contenedor-productos div img{
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+#contenedor-productos div button{
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+}
+#contenedor-productos div button:hover{
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    
+}
+
+
+#contenedor-carrito{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#contenedor-carrito div {
+    border: 4px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.44);
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.44);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.44);
+}
+
+#contenedor-carrito div img{
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+#contenedor-carrito div button{
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+}
+#contenedor-carrito div button:hover{
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    
+}
+
+
+
+#precio_final{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#precio_final div {
+    border: 4px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.44);
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.44);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.44);
+}
+
+#precio_final div img{
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+#precio_final div button{
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+}
+#precio_final div button:hover{
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    
+}
