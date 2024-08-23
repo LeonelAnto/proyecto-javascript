@@ -101,9 +101,16 @@ const render_precio_final = (arrayprecio) => {
 
 };
 
+let btn_compra = document.getElementById("btn_compra")
+    btn_compra.addEventListener("click", () => {
+        Swal.fire("tu compra a sido realizada con exito");
+        localStorage.removeItem('carrito');
+        carrito = JSON.parse(localStorage.getItem( "carrito" )) || [];
+        render_productos(carrito)
+        
+    });
 
 render_precio_final (carrito) ;
-
 
 resultadofinal = suma (carritopreciofinal)
 console.log (resultadofinal)
