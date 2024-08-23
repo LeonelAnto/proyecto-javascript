@@ -32,26 +32,45 @@ const render_productos = (arrayproductos) => {
 render_productos( carrito );
 
 const eliminar_del_carrito = (id) => {
-    carrito = carrito.filter( (elemento) => elemento.id !== id)
+    Swal.fire({
+        icon: "question",
+        title: "Estas seguro que quieres eliminar el producto?",
+        showDenyButton: true,
+        confirmButtonText: "No eliminar",
+        denyButtonText: `Eliminar`
+      }).then((result) => {
+        
+        if (result.isConfirmed) {
+          Swal.fire("El producto no fue eliminado!", "", "error");
 
+        } else if (result.isDenied) {
+          Swal.fire("El producto fue eliminado con exito!", "", "success");
 
-    localStorage.setItem("carrito", JSON.stringify(carrito))
-    render_productos(carrito) ;
-    render_precio_final (carrito) ;
+          carrito = carrito.filter( (elemento) => elemento.id !== id)
+
+          localStorage.setItem("carrito", JSON.stringify(carrito))
+          render_productos(carrito) ;
+          render_precio_final (carrito) ;
+        }
+      });
+
 }
 
-//! no se si escribi mal la funcion o si no la estoy usando bien pero no puedo conseguir que me de un solo un resultado, cuando lo intento me salta un valor NaN
-//! solo me da un numero cuando lo uso en un ciclo foreach o un map y hace las cuentas individuales bien pero no puedo hacerlo en una sola operacion
-function suma(...varios){
+function suma(varios){
 
-    let total = parseInt ( varios.reduce( (acc, elemento)=>{ return acc + (elemento.precio * elemento.cantidad) }, 0) );
+    let total = 0;
+
+    varios.forEach(num => {
+        total += num ;
+    })
 
     
-    console.log (total)
-    
+
     return total
     
 }
+
+let carritopreciofinal = []
 
 const render_precio_final = (arrayprecio) => {
     let precio = document.getElementById("precio_final")
@@ -61,26 +80,30 @@ const render_precio_final = (arrayprecio) => {
 
     precio.innerHTML = "";
 
+    carritopreciofinal = []
+
     arrayprecio.map( (elemento)=>{
-        let resultado = document.createElement("div");
-        resultado.classname = "resultado";
-        resultado.innerHTML =
-        ` <h2> precio final </h2>
-        <h3>${suma(elemento)}</h3>`
-
-        precio.appendChild(resultado);
         
-        console.log (elemento.precio);
-
+        numero = elemento.precio * elemento.cantidad
+        carritopreciofinal.push( parseInt (numero) )
+        console.log (carritopreciofinal)
 
     });
 
-};
+    let resultado = document.createElement("div");
+    resultado.classname = "resultado";
+    resultado.innerHTML =
+    ` <h2> precio final </h2>
+    <h3>${suma(carritopreciofinal)}</h3>`
 
+    precio.appendChild(resultado);
+    
+
+};
 
 
 render_precio_final (carrito) ;
 
 
-
-
+resultadofinal = suma (carritopreciofinal)
+console.log (resultadofinal)
